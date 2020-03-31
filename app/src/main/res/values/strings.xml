@@ -23,6 +23,11 @@
     <string name="price">Price</string>
     <string name="search_results">Search Results</string>
     <string name="search">Search</string>
+    <string name="distance">Distance</string>
+    <string name="cusine_">Cusine:</string>
+    <string name="distance_">Distance:</string>
+    <string name="languages_">Languages:</string>
+    <string name="price_">Price:</string>
 
     <string-array name="genderOptions">
         <item></item>
@@ -31,9 +36,23 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="distanceOptions">
+        <item>5 mi</item>
+        <item>10 mi</item>
+        <item>25 mi</item>
+        <item>50 mi</item>
+    </string-array>
+
+    <string-array name="priceOptions">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
     <string-array name="cuisineOptions">
         <item>Chinese food</item>
-        <item>MIndian cuisine</item>
+        <item>Indian cuisine</item>
         <item>Japanese Cuisine</item>
         <item>Italian food</item>
         <item>Mexican food</item>

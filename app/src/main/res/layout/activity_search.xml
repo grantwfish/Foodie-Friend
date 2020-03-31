@@ -22,11 +22,11 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="380dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="9dp"
+        android:layout_width="375dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="6dp"
         app:layout_constraintBottom_toTopOf="@+id/searchButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,16 +38,52 @@
 
             <TextView
                 android:id="@+id/cusineSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cusine"
+                android:layout_width="122dp"
+                android:layout_height="match_parent"
+                android:text="@string/cusine_"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
-            <Spinner
-                android:id="@+id/cusineSpinner"
-                android:layout_width="178dp"
-                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/cusineId2"
+                android:layout_width="207dp"
+                android:layout_height="match_parent"
+                android:textColor="#FD000000"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/selectCuisineButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_down_float" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/radiusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/distance_"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/radiusId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/selectDistanceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_down_float" />
+
         </TableRow>
 
         <TableRow
@@ -56,16 +92,25 @@
 
             <TextView
                 android:id="@+id/languageText"
-                android:layout_width="wrap_content"
+                android:layout_width="106dp"
                 android:layout_height="wrap_content"
-                android:text="@string/languages"
+                android:text="@string/languages_"
                 android:textColor="#020202"
                 android:textSize="18sp" />
 
-            <Spinner
-                android:id="@+id/languageSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/languageId2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/selectLanguageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_down_float" />
+
         </TableRow>
 
         <TableRow
@@ -76,14 +121,23 @@
                 android:id="@+id/priceText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/price"
+                android:text="@string/price_"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
-            <Spinner
-                android:id="@+id/priceSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/priceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/selectPriceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_down_float" />
+
         </TableRow>
 
     </TableLayout>
@@ -92,12 +146,13 @@
         android:id="@+id/resultsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="9dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/search_results"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchButton" />
 
@@ -105,8 +160,6 @@
         android:id="@+id/recyclerView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +170,7 @@
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="19dp"
         android:text="@string/search"
         app:layout_constraintBottom_toTopOf="@+id/resultsText"
         app:layout_constraintEnd_toEndOf="parent"
