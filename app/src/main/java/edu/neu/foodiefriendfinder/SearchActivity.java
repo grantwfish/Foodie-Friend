@@ -75,6 +75,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // Yelp Params
                 String cuisine = cuisineDropDown.getSelectedItem().toString();
                 int meter = getDistance();
                 String priceRange = getPriceRange();
@@ -103,7 +104,7 @@ public class SearchActivity extends AppCompatActivity {
                         int statusCode = response.code();
                         YelpDataClass yelpDataClass = response.body();
                         if (yelpDataClass == null) {
-                            Log.w(TAG, "Did not receive valid response from Ylep API");
+                            Log.w(TAG, "Did not receive valid response from Yelp API");
                             return;
                         }
                         restaurants.addAll(yelpDataClass.restaurants);
