@@ -32,5 +32,18 @@
         android:text="@string/login_string"
         android:textColor="@android:color/white"
         android:textSize="30sp" />
-        
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="169dp"
+        android:background="@android:color/transparent"
+        android:text="@string/search"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+
 </RelativeLayout>

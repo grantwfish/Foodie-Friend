@@ -4,7 +4,6 @@
     <string name="firstname">FirstName</string>
     <string name="lastname">LastName</string>
     <string name="phone">Phone</string>
-    <string name="cuisine">Cuisine</string>
     <string name="dob">DOB</string>
     <string name="languages">Languages</string>
     <string name="button">Button</string>
@@ -18,6 +17,18 @@
     <string name="go_login">Go Login</string>
     <string name="email">Email</string>
     <string name="select_your_cuisine">select your cuisine</string>
+    <string name="search_criteria">Search Criteria</string>
+    <string name="cusine">Cuisine</string>
+    <string name="price">Price</string>
+    <string name="search_results">Search Results</string>
+    <string name="search">Search</string>
+    <string name="distance">Distance</string>
+    <string name="cusine_">Cusine:</string>
+    <string name="distance_">Distance:</string>
+    <string name="languages_">Languages:</string>
+    <string name="price_">Price:</string>
+    <string name="cuisine">Cuisine</string>
+    <string name="price_range">Price Range</string>
 
     <string-array name="genderOptions">
         <item></item>
@@ -26,9 +37,40 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="distanceOptions">
+        <item>Any distance</item>
+        <item>0.3 mi</item>
+        <item>1 mi</item>
+        <item>5 mi</item>
+        <item>20 mi</item>
+    </string-array>
+
+    <string-array name="priceOptions">
+        <item>Any Range</item>
+        <item>$</item>
+        <item>$$</item>
+        <item>$$$</item>
+        <item>$$$$</item>
+    </string-array>
+
+    <string-array name="cuisineInSearch">
+        <item>Pick your favorite cuisine</item>
+        <item>Chinese food</item>
+        <item>Indian cuisine</item>
+        <item>Japanese Cuisine</item>
+        <item>Italian food</item>
+        <item>Mexican food</item>
+        <item>Thai food</item>
+        <item>Greek food</item>
+        <item>American food</item>
+        <item>Spanish Cuisine</item>
+        <item>Vietnamese food</item>
+        <item>Korea Food</item>
+    </string-array>
+
     <string-array name="cuisineOptions">
         <item>Chinese food</item>
-        <item>MIndian cuisine</item>
+        <item>Indian cuisine</item>
         <item>Japanese Cuisine</item>
         <item>Italian food</item>
         <item>Mexican food</item>

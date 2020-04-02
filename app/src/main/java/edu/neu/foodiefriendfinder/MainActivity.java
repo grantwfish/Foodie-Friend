@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button createUserButton;
     Button loginButton;
+    Button searchButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 moveToLoginActivity();
             }
         });
+
+        searchButton = findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                moveToSearchActivity();
+            }
+        });
     }
 
     private void moveToLoginActivity() {
@@ -42,5 +51,16 @@ public class MainActivity extends AppCompatActivity {
     private void moveToCreateUserActivity() {
         Intent intent = new Intent(this, CreateUserActivity.class);
         startActivity(intent);
+    }
+
+    private void moveToSearchActivity() {
+        Intent intent = new Intent(this, SearchActivity.class);
+        startActivity(intent);
+    }
+
+    private void moveToCreateActivity() {
+        Intent findPrimeActivity = new Intent(MainActivity.this, CreateUserActivity.class);
+        startActivity(findPrimeActivity);
+
     }
 }
