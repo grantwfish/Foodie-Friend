@@ -24,7 +24,6 @@ import java.util.ArrayList;
 
 import edu.neu.foodiefriendfinder.models.User;
 
-import static edu.neu.foodiefriendfinder.LoginActivity.loginUser;
 
 public class CreateUserActivity extends AppCompatActivity {
 
@@ -173,6 +172,7 @@ public class CreateUserActivity extends AppCompatActivity {
         String phone = userPhone.getText().toString();
         String dob = userDob.getText().toString();
         String gender = genderDropDown.getSelectedItem().toString();
+
         if (!id.equals("") && !firstName.equals("") && !lastName.equals("") && !email.equals("") &&
                 !phone.equals("") && !dob.equals("") && !gender.equals("") && userCuisine.size() > 0
         && userLanguages.size() > 0) {
@@ -189,5 +189,7 @@ public class CreateUserActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+
+
 
 }

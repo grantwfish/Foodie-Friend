@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+
 
 import java.util.ArrayList;
 
@@ -37,10 +39,12 @@ public class SearchActivity extends AppCompatActivity {
     private RestaurantsAdapter adapter;
     private static final String BASE_URL = "https://api.yelp.com/v3/";
     private static final String API_KEY = BuildConfig.API_KEY;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
 
         // cuisine select
         cuisineDropDown = findViewById(R.id.cusineSpinner);
@@ -166,5 +170,4 @@ public class SearchActivity extends AppCompatActivity {
         return (int) Math.round(mi * 1609.34);
 
     }
-
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "54913780802",
+    "firebase_url": "https://foodie-friend-finder.firebaseio.com",
+    "project_id": "foodie-friend-finder",
+    "storage_bucket": "foodie-friend-finder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54913780802:android:e0f6d935884f09a2bef1db",
+        "android_client_info": {
+          "package_name": "edu.neu.foodiefriendfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54913780802-ahcorddavbsm0curph4hhlfm5grv9v99.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.neu.foodiefriendfinder",
+            "certificate_hash": "e7f1aca91d107caa09e25b1e6ec505df6d6ff4b4"
+          }
+        },
+        {
+          "client_id": "54913780802-12firao61jvlc31sfr1rtbspm8pf4b5l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF91-b379HmmyXL9WYUtZioZfcOv5xyR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54913780802-12firao61jvlc31sfr1rtbspm8pf4b5l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

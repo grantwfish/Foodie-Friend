@@ -16,6 +16,7 @@ public class User {
     private List<String> languages;
     private String gender;
     private String email;
+    private boolean isOnline;
 
     public User() {
     }
@@ -31,6 +32,7 @@ public class User {
         this.dob = dob;
         this.languages = languages;
         this.gender = gender;
+        this.isOnline = false;
     }
 
     public String getUserId() {
@@ -91,6 +93,14 @@ public class User {
 
     public String getGender() {
         return gender;
+    }
+
+    public boolean getOnline() {
+        return isOnline;
+    }
+
+    public void setOnline(boolean online) {
+        isOnline = online;
     }
 
     public void setGender(String gender) {

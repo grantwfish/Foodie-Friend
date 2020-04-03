@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -58,6 +59,11 @@ public class LoginActivity extends AppCompatActivity {
                         for (User user : users) {
                             if (user.getUserId().equals(usernameInput.getText().toString())) {
                                 loginUser = user;
+                                loginUser.setOnline(true);
+
+                                String currentID = loginUser.getUserId();
+                                userRef.child("Users").child(currentID).child("isOnline").setValue(true);
+
                                 Toast.makeText(LoginActivity.this, "Login", Toast.LENGTH_SHORT).show();
                                 break;
                             }
@@ -82,5 +88,6 @@ public class LoginActivity extends AppCompatActivity {
 
         usernameInput = findViewById(R.id.usernameInput);
     }
+
 
 }
