@@ -65,6 +65,9 @@ public class LoginActivity extends AppCompatActivity {
                                 userRef.child("Users").child(currentID).child("isOnline").setValue(true);
 
                                 Toast.makeText(LoginActivity.this, "Login", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(LoginActivity.this, SearchActivity.class);
+                                LoginActivity.this.startActivity(intent);
                                 break;
                             }
                             count++;
@@ -74,7 +77,6 @@ public class LoginActivity extends AppCompatActivity {
                         } else {
                             // go to another activity
                         }
-
                     }
 
                     @Override
@@ -85,9 +87,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
         usernameInput = findViewById(R.id.usernameInput);
     }
-
-
 }

@@ -1,34 +1,29 @@
 <resources>
     <string name="app_name">Foodie Friend Finder</string>
-    <string name="userid">UserId</string>
-    <string name="firstname">FirstName</string>
-    <string name="lastname">LastName</string>
-    <string name="phone">Phone</string>
-    <string name="dob">DOB</string>
-    <string name="languages">Languages</string>
-    <string name="button">Button</string>
-    <string name="register">Register</string>
-    <string name="sign_in_string">Sign In</string>
-    <string name="username_string">username</string>
-    <string name="login_string">Login</string>
-    <string name="create_user_string">Create User</string>
-    <string name="gender">Gender</string>
+    <string name="useridCreate">UserID</string>
+    <string name="firstnameCreate">FirstName</string>
+    <string name="lastnameCreate">LastName</string>
+    <string name="phoneCreate">Phone</string>
+    <string name="dobCreate">DOB</string>
+    <string name="languagesCreate">Languages</string>
+    <string name="registerButton">Register</string>
+    <string name="signinLogin">Sign In</string>
+    <string name="userIDLogin">userID</string>
+    <string name="loginUserMainActivity">Login</string>
+    <string name="createUserMainActivity">Create User</string>
+    <string name="genderCreate">Gender</string>
     <string name="mm_dd_yyyy">MM-DD-YYYY</string>
-    <string name="go_login">Go Login</string>
-    <string name="email">Email</string>
-    <string name="select_your_cuisine">select your cuisine</string>
+    <string name="alreadyLoginCreate">Already have an account? \n Login Here</string>
+    <string name="emailCreate">Email</string>
+    <string name="cuisineCreate">Familiar Cuisines</string>
     <string name="search_criteria">Search Criteria</string>
-    <string name="cusine">Cuisine</string>
-    <string name="price">Price</string>
-    <string name="search_results">Search Results</string>
     <string name="search">Search</string>
-    <string name="distance">Distance</string>
-    <string name="cusine_">Cusine:</string>
-    <string name="distance_">Distance:</string>
-    <string name="languages_">Languages:</string>
-    <string name="price_">Price:</string>
-    <string name="cuisine">Cuisine</string>
-    <string name="price_range">Price Range</string>
+    <string name="distanceSearch">Distance</string>
+    <string name="cuisineSearch">Cuisine</string>
+    <string name="priceSearch">Price</string>
+    <string name="statusText">Status</string>
+    <string name="onlineToggleText">Offline/Online</string>
+    <string name="pictureforrestaurant">pictureforRestaurant</string>
 
     <string-array name="genderOptions">
         <item></item>
@@ -54,7 +49,7 @@
     </string-array>
 
     <string-array name="cuisineInSearch">
-        <item>Pick your favorite cuisine</item>
+        <item></item>
         <item>Chinese food</item>
         <item>Indian cuisine</item>
         <item>Japanese Cuisine</item>

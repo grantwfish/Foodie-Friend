@@ -17,7 +17,7 @@
             android:id="@+id/textView"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:text="@string/userid" />
+            android:text="@string/useridCreate" />
 
         <EditText
             android:id="@+id/userId"
@@ -38,7 +38,7 @@
             android:id="@+id/textView8"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:text="@string/email" />
+            android:text="@string/emailCreate" />
 
         <EditText
             android:id="@+id/emailId"
@@ -58,21 +58,29 @@
             android:id="@+id/textView2"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:text="@string/firstname" />
+            android:text="@string/firstnameCreate" />
 
         <EditText
             android:id="@+id/firstName"
-            android:layout_width="136dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
             android:inputType="textPersonName" />
 
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:text="@string/lastname" />
+            android:text="@string/lastnameCreate" />
 
         <EditText
             android:id="@+id/lastName"
@@ -80,7 +88,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" />
+
     </TableRow>
+
 
     <TableRow
         android:layout_width="match_parent"
@@ -91,7 +101,7 @@
             android:id="@+id/genderText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/gender" />
+            android:text="@string/genderCreate" />
 
         <Spinner
             android:id="@+id/genderSpinner"
@@ -102,7 +112,7 @@
             android:id="@+id/textView6"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="@string/dob" />
+            android:text="@string/dobCreate" />
 
         <EditText
             android:id="@+id/dobId"
@@ -125,7 +135,7 @@
             android:id="@+id/textView4"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:text="@string/phone" />
+            android:text="@string/phoneCreate" />
 
         <EditText
             android:id="@+id/phone"
@@ -146,7 +156,7 @@
             android:id="@+id/cuisineText"
             android:layout_width="72dp"
             android:layout_height="wrap_content"
-            android:text="@string/cuisine" />
+            android:text="@string/cuisineCreate" />
 
         <TextView
             android:id="@+id/cuisineId"
@@ -171,7 +181,7 @@
             android:id="@+id/textView7"
             android:layout_width="72dp"
             android:layout_height="wrap_content"
-            android:text="@string/languages" />
+            android:text="@string/languagesCreate" />
 
         <TextView
             android:id="@+id/languageId"
@@ -194,20 +204,22 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/registerButton"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/register" />
-
-        <Button
             android:id="@+id/goLoginButton"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/go_login" />
+            android:text="@string/alreadyLoginCreate" />
+
+        <Button
+            android:id="@+id/registerButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/registerButton" />
+
+
 
     </LinearLayout>
 

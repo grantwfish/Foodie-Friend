@@ -15,5 +15,4 @@ public interface YelpService {
                                           @Query("longitude") double longitude,
                                           @Query("radius") int distance,
                                           @Query("price") String price);
-
 }

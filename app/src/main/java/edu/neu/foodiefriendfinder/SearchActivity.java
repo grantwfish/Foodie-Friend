@@ -35,10 +35,11 @@ public class SearchActivity extends AppCompatActivity {
     private ArrayList<Integer> priceIndex = new ArrayList<>();
     private ArrayList<String> userPrice = new ArrayList<>();
 
-
     private RestaurantsAdapter adapter;
+
     private static final String BASE_URL = "https://api.yelp.com/v3/";
     private static final String API_KEY = BuildConfig.API_KEY;
+    private static final String TAG = "search";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,31 +87,37 @@ public class SearchActivity extends AppCompatActivity {
 
                 RecyclerView recyclerView;
 
-                ArrayList<YelpRestaurant> restaurants = new ArrayList<YelpRestaurant>();
                 adapter = new RestaurantsAdapter(R.layout.item_restaurant, SearchActivity.this);
                 recyclerView = findViewById(R.id.rvRestaurants);
                 recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
                 recyclerView.setAdapter(adapter);
 
+                // Build the HTTP Request
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(BASE_URL)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
+                // Used to store restaurants returned from API Call
+                ArrayList<YelpRestaurant> restaurants = new ArrayList<>();
+
+                // API Call to wrap in HTTP Request -- Async callback
                 YelpService yelpService = retrofit.create(YelpService.class);
                 yelpService.searchRestaurants(API_KEY,cuisine, 42.3398,
                         -71.0892, meter, priceRange).enqueue(new Callback<YelpDataClass>() {
-
-                    private static final String TAG = "search";
 
                     @Override
                     public void onResponse(Call<YelpDataClass> call, Response<YelpDataClass> response) {
                         int statusCode = response.code();
                         YelpDataClass yelpDataClass = response.body();
+
                         if (yelpDataClass == null) {
                             Log.w(TAG, "Did not receive valid response from Yelp API");
+                            Log.i(TAG, "statusCode: " + statusCode);
                             return;
                         }
+
+                        // Adds list of restaurants to the YelpRestaurants list to expose needed attributes.
                         restaurants.addAll(yelpDataClass.restaurants);
                         adapter.setRestaurants(restaurants);
 
@@ -118,7 +125,7 @@ public class SearchActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<YelpDataClass> call, Throwable t) {
-                        // Log error here since request failed
+                        Log.e(TAG, "Yelp API failed to return restaurant data.");
 
                     }
                 });

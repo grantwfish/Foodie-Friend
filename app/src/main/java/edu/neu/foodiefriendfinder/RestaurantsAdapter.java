@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -24,7 +23,7 @@ import edu.neu.foodiefriendfinder.models.YelpRestaurant;
 public class RestaurantsAdapter extends RecyclerView.Adapter<RestaurantsAdapter.ViewHolder> {
     private int restaurantLayout;
     private Context context;
-    private List<YelpRestaurant> restautantList;
+    private List<YelpRestaurant> restaurantList;
 
     private OnItemClickListener mListener;
 
@@ -39,11 +38,10 @@ public class RestaurantsAdapter extends RecyclerView.Adapter<RestaurantsAdapter.
     public RestaurantsAdapter(int layoutId, Context context) {
         this.restaurantLayout = layoutId;
         this.context = context;
-
     }
 
     public void setRestaurants(List<YelpRestaurant> restaurants) {
-        restautantList = restaurants;
+        restaurantList = restaurants;
         notifyDataSetChanged();
     }
 
@@ -57,7 +55,7 @@ public class RestaurantsAdapter extends RecyclerView.Adapter<RestaurantsAdapter.
 
     @Override
     public void onBindViewHolder(RestaurantsAdapter.ViewHolder holder, int position) {
-        YelpRestaurant restaurant = restautantList.get(position);
+        YelpRestaurant restaurant = restaurantList.get(position);
         holder.bind(restaurant, this.context);
 
     }
@@ -83,9 +81,6 @@ public class RestaurantsAdapter extends RecyclerView.Adapter<RestaurantsAdapter.
             price = itemView.findViewById(R.id.priceRange);
             imageView = itemView.findViewById(R.id.imageView);
 
-
-
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -100,7 +95,7 @@ public class RestaurantsAdapter extends RecyclerView.Adapter<RestaurantsAdapter.
             });
         }
 
-        public void bind(YelpRestaurant restaurant, Context context) {
+        void bind(YelpRestaurant restaurant, Context context) {
             rName.setText(restaurant.name);
             rating.setRating((float) restaurant.rating);
             reviews.setText(restaurant.reviewCount + " Reviews");
@@ -116,6 +111,6 @@ public class RestaurantsAdapter extends RecyclerView.Adapter<RestaurantsAdapter.
 
     @Override
     public int getItemCount() {
-        return restautantList == null? 0 : restautantList.size();
+        return restaurantList == null ? 0 : restaurantList.size();
     }
 }

@@ -24,11 +24,9 @@ import java.util.ArrayList;
 
 import edu.neu.foodiefriendfinder.models.User;
 
-
 public class CreateUserActivity extends AppCompatActivity {
 
     private Spinner genderDropDown;
-
 
     private TextView languageSelected;
     private TextView cuisineSelected;
@@ -50,9 +48,7 @@ public class CreateUserActivity extends AppCompatActivity {
     private EditText userDob;
     private EditText userEmail;
 
-
     private DatabaseReference usersReference;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +101,6 @@ public class CreateUserActivity extends AppCompatActivity {
             }
         });
 
-
         // create user
         Button register = findViewById(R.id.registerButton);
         register.setOnClickListener(new View.OnClickListener() {
@@ -124,8 +119,6 @@ public class CreateUserActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     private Dialog makeSelectDialog(final String[] itemBank, boolean[] checkedItems,
                                         final ArrayList<Integer> itemIndex,
@@ -181,7 +174,6 @@ public class CreateUserActivity extends AppCompatActivity {
             Toast.makeText(this, "Success!!!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Something unfilled!!!", Toast.LENGTH_SHORT).show();
-
         }
     }
 
@@ -189,7 +181,4 @@ public class CreateUserActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
-
-
-
 }
