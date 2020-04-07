@@ -10,11 +10,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
+import android.widget.Switch;
 
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import edu.neu.foodiefriendfinder.models.SelectableRestaurant;
 import edu.neu.foodiefriendfinder.models.YelpDataClass;
 import edu.neu.foodiefriendfinder.models.YelpRestaurant;
 import edu.neu.foodiefriendfinder.yelpData.YelpService;
@@ -24,11 +30,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements RestaurantsViewHolder.OnItemSelectedListener {
 
     private Spinner cuisineDropDown;
     private Spinner distanceDropDown;
     private Spinner priceDropDown;
+    private Switch statusToggle;
 
     private String[] priceBank;
     private boolean[] checkedPrice;
@@ -40,6 +47,7 @@ public class SearchActivity extends AppCompatActivity {
     private static final String BASE_URL = "https://api.yelp.com/v3/";
     private static final String API_KEY = BuildConfig.API_KEY;
     private static final String TAG = "search";
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,21 +83,32 @@ public class SearchActivity extends AppCompatActivity {
         priceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         priceDropDown.setAdapter(priceAdapter);
 
+        // status toggle
+        statusToggle = findViewById(R.id.statusToggle);
+
         Button search = findViewById(R.id.searchButton);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Used to store restaurants returned from API Call
+                ArrayList<YelpRestaurant> restaurants = new ArrayList<>();
 
                 // Yelp Params
                 String cuisine = cuisineDropDown.getSelectedItem().toString();
                 int meter = getDistance();
                 String priceRange = getPriceRange();
+                boolean userStatus = getStatus();
 
-                RecyclerView recyclerView;
 
-                adapter = new RestaurantsAdapter(R.layout.item_restaurant, SearchActivity.this);
+
+//                adapter = new RestaurantsAdapter(R.layout.item_restaurant, SearchActivity.this);
+
+
                 recyclerView = findViewById(R.id.rvRestaurants);
                 recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
+
+                adapter = new RestaurantsAdapter(R.layout.item_restaurant, SearchActivity.this, restaurants, false);
+
                 recyclerView.setAdapter(adapter);
 
                 // Build the HTTP Request
@@ -98,8 +117,7 @@ public class SearchActivity extends AppCompatActivity {
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
 
-                // Used to store restaurants returned from API Call
-                ArrayList<YelpRestaurant> restaurants = new ArrayList<>();
+
 
                 // API Call to wrap in HTTP Request -- Async callback
                 YelpService yelpService = retrofit.create(YelpService.class);
@@ -177,4 +195,27 @@ public class SearchActivity extends AppCompatActivity {
         return (int) Math.round(mi * 1609.34);
 
     }
+
+    public boolean getStatus() {
+        final boolean[] currentStatus = {false};
+        statusToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            // Default value for toggle switch.
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // If checked, true... otherwise false.
+                currentStatus[0] = isChecked;
+            }
+        });
+        return currentStatus[0];
+    }
+
+    @Override
+    public void onItemSelected(SelectableRestaurant restaurant) {
+        List<YelpRestaurant> selectedRestaurants = adapter.getSelectedRestaurants();
+        Snackbar.make(recyclerView, "Selected restaurants are "  + restaurant.getRestaurantName() +
+                ", Total selected restaurant count is " + selectedRestaurants.size(), Snackbar.LENGTH_LONG).show();
+    }
+    // TODO -- Implement max selection for checkboxes.
+    // TODO -- Implement sending list of selected restaurants to firebase to compare to other users who picked the same restaurants.
 }

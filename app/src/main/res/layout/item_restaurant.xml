@@ -21,10 +21,8 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="272dp"
         android:contentDescription="@string/pictureforrestaurant"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/restaurantSelectBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -95,11 +93,22 @@
         app:layout_constraintTop_toBottomOf="@+id/restaurantDistan"
         tools:text="$$" />
 
-    <CheckBox
-        android:id="@+id/restaurantSelectBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView" />
+    <!--    <CheckBox-->
+<!--        android:id="@+id/restaurantSelectBox"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageView" />-->
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:checked="false"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:maxLines="1"
+
+        app:layout_constraintLeft_toRightOf="@id/foodCategory"
+        tools:layout_editor_absoluteY="68dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

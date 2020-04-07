@@ -43,10 +43,18 @@ public class YelpRestaurant {
     @Expose
     public Double distanceInMeters;
 
+    public YelpRestaurant() {
+    }
+
     public String meterToMile(){
         double mi = distanceInMeters * 0.00062137;
         return String.format("%.1f", mi) + " Mi";
-
     }
+
+    public String getRestaurantName() {
+        return this.name;
+    }
+
+
 
 }
