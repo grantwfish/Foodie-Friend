@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "720112166568-llhtks0t6s146bqpk7irelip73vdedih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.neu.foodiefriend",
+            "certificate_hash": "80205b7ed2a684017612ff915dd1db97105a3395"
+          }
+        },
+        {
           "client_id": "720112166568-k4f57n15094rnj9fqh033llti4m3m8m4.apps.googleusercontent.com",
           "client_type": 3
         }

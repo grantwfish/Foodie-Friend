@@ -1,6 +1,7 @@
 package edu.neu.foodiefriend;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.view.View;
@@ -35,6 +36,8 @@ public class FoodieResultActivity extends AppCompatActivity {
 
     private ArrayList<User> selectedFoodies = new ArrayList<>();
 
+    public static User matchedFoodie;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +70,6 @@ public class FoodieResultActivity extends AppCompatActivity {
                                 if (user.getInterestedRestaurants().contains(restaurant)
                                         && (!user.getUserId().equals(loginUser.getUserId()))) {
                                     if (!matchFoodies.contains(user)) {
-                                        System.out.println("From inside loop, loginUser: " + loginUser.getUserId());
                                         matchFoodies.add(user);
                                     }
                                 }
@@ -129,6 +131,9 @@ public class FoodieResultActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 setSelectedFoodie(userId);
+                matchedFoodie = foodie;
+                Intent intent = new Intent(FoodieResultActivity.this, FoodieChatActivity.class);
+                startActivity(intent);
             }
         });
 

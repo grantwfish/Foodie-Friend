@@ -13,8 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="edu.neu.foodiefriend.FoodieResultActivity"></activity>
-        <activity android:name="edu.neu.foodiefriend.MainActivity">
+        <activity android:name=".FoodieChatActivity"></activity>
+        <activity android:name=".FoodieResultActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -22,9 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.neu.foodiefriend.SearchActivity" />
-        <activity android:name="edu.neu.foodiefriend.CreateUserActivity" />
-        <activity android:name="edu.neu.foodiefriend.LoginActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".CreateUserActivity" />
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
